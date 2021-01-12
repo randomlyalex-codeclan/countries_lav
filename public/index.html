@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/bundle.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>Total Population: {{ totalPopulation }} </h2>
+        <!-- <ul>
+        <li v-for="country in allCountries">
+            <span>Name: {{ country.name }} -- Pop: {{ country.population }} </span> 
+        </li>
+        </ul> -->
+    
+        <select v-model="countrySelect">
+            <option v-for="country in allCountries">{{ country.name }}</option>
+        </select>
+        <!-- <button v-on:click="filterByName"> Show Info</button> -->
+        <ul v-for="country in filteredCountries">
+            <li > Name:  {{ country.name }} </li>
+            <li > Pop:  {{ country.population }} </li>
+            <li > <img :src=country.flag alt=""> </li>
+        </ul>
+
+        
+         
+    </div>
+</body>
+</html>
